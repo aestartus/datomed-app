@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/datomed-app.iml" filepath="$PROJECT_DIR$/datomed-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/datomed-app-api/datomed-app-api.iml" filepath="$PROJECT_DIR$/modules/datomed-app-api/datomed-app-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/datomed-app-core/datomed-app-core.iml" filepath="$PROJECT_DIR$/modules/datomed-app-core/datomed-app-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/modules/datomed-app-web/datomed-app-web.iml" filepath="$PROJECT_DIR$/modules/datomed-app-web/datomed-app-web.iml" />
+    </modules>
+  </component>
+</project>
+

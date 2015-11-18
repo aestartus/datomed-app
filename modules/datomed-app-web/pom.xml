@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>datomed-app</groupId>
+    <artifactId>datomed-app-web</artifactId>
+    <name>DatoMed Web</name>
+    <description>Capa web del aplicativo</description>
+
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+    <organization>
+        <name>Wisse SpA</name>
+        <url>http://www.wisse.cl</url>
+    </organization>
+
+    <developers>
+        <developer>
+            <id>aestartus</id>
+            <name>Angelo Estartus</name>
+            <email>aestartus@wisse.cl</email>
+            <organization>Wisse SpA</organization>
+            <organizationUrl>http://www.wisse.cl</organizationUrl>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>2.3</source>
+                    <target>2.3</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Implementation-Vendor>Wisse SpA</Implementation-Vendor>
+                            <Implementation-Title>${project.name}</Implementation-Title>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>datomed-app-api</artifactId>
+            <version>${project.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+    </dependencies>
+
+
+</project>
