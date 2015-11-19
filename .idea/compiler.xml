@@ -25,6 +25,12 @@
         <processorPath useClasspath="true" />
         <module name="datomed-app-api" />
         <module name="datomed-app-core" />
+      </profile>
+      <profile default="false" name="Annotation profile for datomed-app-web" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
         <module name="datomed-app-web" />
       </profile>
     </annotationProcessing>
@@ -36,4 +42,3 @@
     </bytecodeTargetLevel>
   </component>
 </project>
-

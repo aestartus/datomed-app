@@ -2,12 +2,43 @@
   <artifact type="exploded-war" name="datomed-app-web:war exploded">
     <output-path>$PROJECT_DIR$/modules/datomed-app-web/target/datomed-app-web-1.0-SNAPSHOT</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="datomed-app-web/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="datomed-app-web" />
         </element>
+        <element id="directory" name="lib">
+          <element id="archive" name="datomed-app-api-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="datomed-app-api" />
+          </element>
+          <element id="archive" name="datomed-app-core-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="datomed-app-core" />
+          </element>
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-server:1.9" />
+          <element id="library" level="project" name="Maven: asm:asm:3.1" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-core:1.9" />
+          <element id="library" level="project" name="Maven: com.sun.jersey:jersey-json:1.9" />
+          <element id="library" level="project" name="Maven: org.codehaus.jettison:jettison:1.1" />
+          <element id="library" level="project" name="Maven: stax:stax-api:1.0.1" />
+          <element id="library" level="project" name="Maven: com.sun.xml.bind:jaxb-impl:2.2.3-1" />
+          <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.2.2" />
+          <element id="library" level="project" name="Maven: javax.xml.stream:stax-api:1.0-2" />
+          <element id="library" level="project" name="Maven: javax.activation:activation:1.1" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-core-asl:1.8.3" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.8.3" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-jaxrs:1.8.3" />
+          <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-xc:1.8.3" />
+          <element id="library" level="project" name="Maven: com.sun.jersey.contribs:jersey-multipart:1.9" />
+          <element id="library" level="project" name="Maven: org.jvnet:mimepull:1.6" />
+          <element id="library" level="project" name="Maven: org.jvnet.mimepull:mimepull:1.9" />
+          <element id="library" level="project" name="Maven: javax.ejb:javax.ejb-api:3.2" />
+          <element id="library" level="project" name="Maven: javax.transaction:javax.transaction-api:1.2" />
+          <element id="library" level="project" name="Maven: org.glassfish:javax.json:1.0.4" />
+        </element>
       </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/modules/datomed-app-web/target/datomed-app-web-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="datomed-app-web/web/Web" />
     </root>
   </artifact>
 </component>
