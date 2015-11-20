@@ -32,7 +32,7 @@ public class DemoBusinessRESTResource implements DemoBusinessRESTResourceProxy {
             @FormParam( "password" ) String password ) {
 
         DemoAuthenticator demoAuthenticator = DemoAuthenticator.getInstance();
-        String serviceKey = httpHeaders.getHeaderString( DemoHTTPHeaderNames.SERVICE_KEY );
+        String serviceKey = httpHeaders.getRequestHeader(DemoHTTPHeaderNames.SERVICE_KEY).get(0);
 
         try {
             String authToken = demoAuthenticator.login( serviceKey, username, password );
@@ -75,8 +75,8 @@ public class DemoBusinessRESTResource implements DemoBusinessRESTResourceProxy {
             @Context HttpHeaders httpHeaders ) {
         try {
             DemoAuthenticator demoAuthenticator = DemoAuthenticator.getInstance();
-            String serviceKey = httpHeaders.getHeaderString( DemoHTTPHeaderNames.SERVICE_KEY );
-            String authToken = httpHeaders.getHeaderString( DemoHTTPHeaderNames.AUTH_TOKEN );
+            String serviceKey = httpHeaders.getRequestHeader( DemoHTTPHeaderNames.SERVICE_KEY ).get(0);
+            String authToken = httpHeaders.getRequestHeader( DemoHTTPHeaderNames.AUTH_TOKEN ).get(0);
 
             demoAuthenticator.logout( serviceKey, authToken );
 
