@@ -13,8 +13,8 @@ import java.io.Serializable;
  * Created by aestartus on 18-11-15.
  */
 @Local
-@Path( "demo-business-resource" )
-public interface DemoBusinessRESTResourceProxy extends Serializable {
+@Path( "business-resource" )
+public interface BusinessRESTResourceProxy extends Serializable {
 
     @POST
     @Path( "login" )
@@ -25,12 +25,12 @@ public interface DemoBusinessRESTResourceProxy extends Serializable {
             @FormParam( "password" ) String password );
 
     @GET
-    @Path( "demo-get-method" )
+    @Path( "get-method" )
     @Produces( MediaType.APPLICATION_JSON )
     public Response demoGetMethod();
 
     @POST
-    @Path( "demo-post-method" )
+    @Path( "post-method" )
     @Produces( MediaType.APPLICATION_JSON )
     public Response demoPostMethod();
 

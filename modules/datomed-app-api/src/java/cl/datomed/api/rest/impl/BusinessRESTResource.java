@@ -1,8 +1,8 @@
 package cl.datomed.api.rest.impl;
 
-import cl.datomed.api.DemoAuthenticator;
-import cl.datomed.api.rest.DemoBusinessRESTResourceProxy;
-import cl.datomed.api.rest.DemoHTTPHeaderNames;
+import cl.datomed.api.Authenticator;
+import cl.datomed.api.rest.BusinessRESTResourceProxy;
+import cl.datomed.api.rest.HTTPHeaderNames;
 
 import javax.ejb.Stateless;
 import javax.json.Json;
@@ -20,8 +20,8 @@ import java.security.GeneralSecurityException;
 /**
  * Created by aestartus on 18-11-15.
  */
-@Stateless( name = "DemoBusinessRESTResource", mappedName = "ejb/DemoBusinessRESTResource" )
-public class DemoBusinessRESTResource implements DemoBusinessRESTResourceProxy {
+@Stateless( name = "DemoBusinessRESTResource", mappedName = "ejb/BusinessRESTResource" )
+public class BusinessRESTResource implements BusinessRESTResourceProxy {
 
     private static final long serialVersionUID = -6663599014192066936L;
 
@@ -31,11 +31,11 @@ public class DemoBusinessRESTResource implements DemoBusinessRESTResourceProxy {
             @FormParam( "username" ) String username,
             @FormParam( "password" ) String password ) {
 
-        DemoAuthenticator demoAuthenticator = DemoAuthenticator.getInstance();
-        String serviceKey = httpHeaders.getRequestHeader(DemoHTTPHeaderNames.SERVICE_KEY).get(0);
+        Authenticator authenticator = Authenticator.getInstance();
+        String serviceKey = httpHeaders.getRequestHeader(HTTPHeaderNames.SERVICE_KEY).get(0);
 
         try {
-            String authToken = demoAuthenticator.login( serviceKey, username, password );
+            String authToken = authenticator.login( serviceKey, username, password );
 
             JsonObjectBuilder jsonObjBuilder = Json.createObjectBuilder();
             jsonObjBuilder.add( "auth_token", authToken );
@@ -74,11 +74,11 @@ public class DemoBusinessRESTResource implements DemoBusinessRESTResourceProxy {
     public Response logout(
             @Context HttpHeaders httpHeaders ) {
         try {
-            DemoAuthenticator demoAuthenticator = DemoAuthenticator.getInstance();
-            String serviceKey = httpHeaders.getRequestHeader( DemoHTTPHeaderNames.SERVICE_KEY ).get(0);
-            String authToken = httpHeaders.getRequestHeader( DemoHTTPHeaderNames.AUTH_TOKEN ).get(0);
+            Authenticator authenticator = Authenticator.getInstance();
+            String serviceKey = httpHeaders.getRequestHeader( HTTPHeaderNames.SERVICE_KEY ).get(0);
+            String authToken = httpHeaders.getRequestHeader( HTTPHeaderNames.AUTH_TOKEN ).get(0);
 
-            demoAuthenticator.logout( serviceKey, authToken );
+            authenticator.logout( serviceKey, authToken );
 
             return getNoCacheResponseBuilder( Response.Status.NO_CONTENT ).build();
         } catch ( final GeneralSecurityException ex ) {

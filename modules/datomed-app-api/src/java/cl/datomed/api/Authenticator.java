@@ -9,9 +9,9 @@ import java.util.UUID;
 /**
  * Created by aestartus on 18-11-15.
  */
-public final class DemoAuthenticator {
+public final class Authenticator {
 
-    private static DemoAuthenticator authenticator = null;
+    private static Authenticator authenticator = null;
 
     // A user storage which stores <username, password>
     private final Map<String, String> usersStorage = new HashMap();
@@ -22,7 +22,7 @@ public final class DemoAuthenticator {
     // An authentication token storage which stores <service_key, auth_token>.
     private final Map<String, String> authorizationTokensStorage = new HashMap();
 
-    private DemoAuthenticator() {
+    private Authenticator() {
         // The usersStorage pretty much represents a user table in the database
         usersStorage.put( "username1", "passwordForUser1" );
         usersStorage.put( "username2", "passwordForUser2" );
@@ -38,9 +38,9 @@ public final class DemoAuthenticator {
         serviceKeysStorage.put( "3b91cab8-926f-49b6-ba00-920bcf934c2a", "username2" );
     }
 
-    public static DemoAuthenticator getInstance() {
+    public static Authenticator getInstance() {
         if ( authenticator == null ) {
-            authenticator = new DemoAuthenticator();
+            authenticator = new Authenticator();
         }
 
         return authenticator;
