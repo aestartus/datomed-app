@@ -1,0 +1,15 @@
+#Carpetas de compilacion
+target/
+datomed-app*/target/
+
+#Archivos y carpetas propias del IDE
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+datomed-app*/.idea/
+datomed-app*/.settings/
+datomed-app*/*.iml
+datomed-app*/.classpath
+datomed-app*/.project
